@@ -1,15 +1,16 @@
 import { styled } from "@mui/material/styles";
 
-export const StyledInput = styled("input")(() => ({
+export const StyledInput = styled("input")(({ theme }) => ({
   color: "#15312E",
-  width: "60%",
+  width: "100%",
   border: "1px solid #333",
   outline: 0,
   height: "55px",
-  padding: "0 1.5rem",
   background: "#fff",
   boxShadow: "none",
   borderRadius: "28px",
   font: "inherit",
   margin: 0,
+  textIndent: "1.5rem",
+  marginBottom: "16px",
 }));

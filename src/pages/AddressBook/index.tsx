@@ -1,18 +1,19 @@
 import { useState } from "react";
-import { Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 
 import SelectAddressDialog from "components/Dialogs/SelectAddressDialog";
 import AutoAddDialog from "components/Dialogs/AutoAddDialog";
 import ManualAddDialog from "components/Dialogs/ManualAddDialog";
 import { BequestButton, BequestInput } from "components/Bequest";
 
-import { AddressInputWrapper, Container, InputWrapper } from "./style";
+import { AddressInputWrapper, Container } from "./style";
 
 const AddressBook = () => {
   const [openSelect, setOpenSelect] = useState<boolean>(false);
   const [openAuto, setOpenAuto] = useState<boolean>(false);
   const [openManual, setOpenManual] = useState<boolean>(false);
 
+  // handling SelectAddressDialog
   const handleOpenSelect = () => {
     setOpenSelect(true);
   };
@@ -20,6 +21,7 @@ const AddressBook = () => {
     setOpenSelect(false);
   };
 
+  // handling AutoAddAddressDialog
   const handleOpenAuto = () => {
     setOpenSelect(false);
     setOpenAuto(true);
@@ -29,6 +31,7 @@ const AddressBook = () => {
     setOpenSelect(true);
   };
 
+  // handling ManualAddAddressDialog
   const handleOpenManual = () => {
     setOpenAuto(false);
     setOpenManual(true);
@@ -56,12 +59,12 @@ const AddressBook = () => {
         >
           Address:
         </Typography>
-        <InputWrapper>
+        <Grid container>
           <BequestInput />
           <BequestButton handleOnClick={handleOpenSelect}>
             Select Address
           </BequestButton>
-        </InputWrapper>
+        </Grid>
       </AddressInputWrapper>
 
       <SelectAddressDialog

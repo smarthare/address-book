@@ -9,10 +9,3 @@ export const Container = styled("div")(() => ({
 export const AddressInputWrapper = styled("div")(() => ({
   maxWidth: "800px",
 }));
-
-export const InputWrapper = styled("div")(() => ({
-  width: "100%",
-  display: "flex",
-  justifyContent: "space-between",
-  marginBottom: "24px",
-}));
