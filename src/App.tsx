@@ -1,10 +1,10 @@
-import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 import AddressBook from "./pages/AddressBook";
 
 function App() {
   return (
     <>
-      <Navbar />
+      <Sidebar />
       <AddressBook />
     </>
   );

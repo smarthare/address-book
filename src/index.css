@@ -14,8 +14,7 @@
 
 body {
   margin: 0;
-  font-family: Gotham, "DM Sans", sans-serif;
-  color: #343a40 !important;
+  color: #343a40;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -23,4 +22,9 @@ body {
 #root {
   display: flex;
   min-height: 100vh;
+}
+
+body, h1, h3, p, button {
+  font-family: Gotham, "DM Sans", sans-serif !important;
+  color: "#343A40";
 }

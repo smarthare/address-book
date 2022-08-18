@@ -1,15 +1,15 @@
 import * as React from "react";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ContactsIcon from "@mui/icons-material/Contacts";
+import {
+  Divider,
+  List,
+  ListItem,
+  ListItemButton,
+  IconButton,
+} from "@mui/material";
+import { ChevronLeft, Contacts, ChevronRight } from "@mui/icons-material";
 
-import logo from "../../assets/logo.svg";
-import logoIcon from "../../assets/logo-icon.svg";
+import logo from "assets/logo.svg";
+import logoIcon from "assets/logo-icon.svg";
 import {
   Drawer,
   DrawerHeader,
@@ -17,7 +17,7 @@ import {
   StyledListItemText,
 } from "./style";
 
-export default function MiniDrawer() {
+export default function Sidebar() {
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -35,7 +35,7 @@ export default function MiniDrawer() {
           <ListItem key="Address Book" disablePadding>
             <ListItemButton sx={{ p: "10px 16px" }}>
               <StyledListItemIcon>
-                <ContactsIcon />
+                <Contacts />
               </StyledListItemIcon>
               <StyledListItemText primary="Address Book" open={open} />
             </ListItemButton>
@@ -43,7 +43,7 @@ export default function MiniDrawer() {
           <Divider />
           <ListItem sx={{ flexDirection: "row-reverse" }}>
             <IconButton onClick={handleDrawerToggle} sx={{ p: "12px" }}>
-              {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+              {open ? <ChevronLeft /> : <ChevronRight />}
             </IconButton>
           </ListItem>
           <Divider />
