@@ -1,10 +1,10 @@
 import { Grid } from "@mui/material";
 
 import DialogBase from "../DialogBase";
+import { BequestButton, BequestInput } from "components/Bequest";
 
 import { DialogEnhanceProps } from "types/props";
 import { StyledButton } from "./style";
-import { BequestButton, BequestInput } from "components/Bequest";
 
 const AutoAddDialog = (props: DialogEnhanceProps) => {
   const { open, title, handleClose, handleOpenNext } = props;
@@ -19,10 +19,12 @@ const AutoAddDialog = (props: DialogEnhanceProps) => {
     >
       <Grid container>
         <Grid container display="flex" justifyContent="space-between">
-          <BequestInput />
-          <BequestButton handleOnClick={() => {}}>
-            Find Address
-          </BequestButton>
+          <Grid item md={8} xs={12}>
+            <BequestInput disabled />
+          </Grid>
+          <Grid item md={3} xs={12} spacing-xs-1>
+            <BequestButton handleOnClick={() => {}}>Find Address</BequestButton>
+          </Grid>
         </Grid>
         <StyledButton onClick={handleOpenNext}>
           Enter address manually

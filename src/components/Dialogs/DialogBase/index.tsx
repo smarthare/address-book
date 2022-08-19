@@ -39,8 +39,8 @@ const DialogBase = (props: DialogBaseProps) => {
       <DialogContent dividers>{children}</DialogContent>
 
       <DialogActions>
-        <BequestButton handleOnClick={handleCancelAction}>Cancel</BequestButton>
-        <BequestButton handleOnClick={handleOkAction} secondary>
+        <BequestButton handleOnClick={handleCancelAction} noWidth>Cancel</BequestButton>
+        <BequestButton handleOnClick={handleOkAction} secondary noWidth>
           OK
         </BequestButton>
       </DialogActions>

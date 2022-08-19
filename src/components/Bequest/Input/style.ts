@@ -1,6 +1,10 @@
 import { styled } from "@mui/material/styles";
 
-export const StyledInput = styled("input")(({ theme }) => ({
+export const StyledInput = styled("input", {
+  shouldForwardProp: (prop) => prop !== "gutterTop",
+})(({ gutterTop }: { gutterTop?: boolean }) => ({
+  margin: 0,
+  padding: 0,
   color: "#15312E",
   width: "100%",
   border: "1px solid #333",
@@ -10,7 +14,11 @@ export const StyledInput = styled("input")(({ theme }) => ({
   boxShadow: "none",
   borderRadius: "28px",
   font: "inherit",
-  margin: 0,
   textIndent: "1.5rem",
-  marginBottom: "16px",
+  fontSize: "1.125rem",
+  ...(gutterTop && { marginTop: "24px" }),
+
+  "&:hover": {
+    cursor: "text",
+  },
 }));

@@ -51,19 +51,23 @@ const AddressBook = () => {
       </Typography>
 
       <AddressInputWrapper>
-        <Typography
-          variant="h3"
-          fontSize="1.5rem"
-          fontWeight="bold"
-          sx={{ marginBottom: "24px" }}
-        >
+        <Typography variant="h3" fontSize="1.5rem" fontWeight="bold">
           Address:
         </Typography>
-        <Grid container>
-          <BequestInput />
-          <BequestButton handleOnClick={handleOpenSelect}>
-            Select Address
-          </BequestButton>
+        <Grid
+          container
+          display="flex"
+          justifyContent="space-between"
+          marginTop="24px"
+        >
+          <Grid item md={8} xs={12}>
+            <BequestInput value="" disabled />
+          </Grid>
+          <Grid item md={3} xs={12}>
+            <BequestButton handleOnClick={handleOpenSelect}>
+              Select Address
+            </BequestButton>
+          </Grid>
         </Grid>
       </AddressInputWrapper>
 
