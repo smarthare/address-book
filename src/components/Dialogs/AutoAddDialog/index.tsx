@@ -1,19 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
-
-import {
-  Grid,
-  CircularProgress,
-  Typography,
-  MenuItem,
-  Select,
-} from "@mui/material";
+import { Grid, CircularProgress, Typography } from "@mui/material";
 
 import DialogBase from "../DialogBase";
-import { BequestButton, BequestInput, BequestSelect } from "components/Bequest";
+import AddressInput from "./AddressInput";
+import { BequestButton, BequestSelect } from "components/Bequest";
 
 import { AddressContext } from "contexts/AddressContext";
 import { DialogEnhanceProps } from "types/props";
 import { StyledButton } from "./style";
+import concatAddress from "utils/concatAddress";
 
 const AutoAddDialog = (props: DialogEnhanceProps) => {
   const { handleOpenNext, ...rest } = props;
@@ -22,20 +17,11 @@ const AutoAddDialog = (props: DialogEnhanceProps) => {
 
   const [postcode, setPostcode] = useState<string>();
   const [formattedAddrs, setFormattedAddrs] = useState<Array<string>>();
-  const [address, setAddress] = useState();
+  const [candi, setCandi] = useState<number | "">("");
 
   useEffect(() => {
     if (candiAddrs) {
-      const _formattedAddrs = candiAddrs.map(
-        (addr) =>
-          addr.formatted_address.reduce(
-            (prev, cur) =>
-              cur !== "" ? (prev ? `${prev}, ${cur}` : cur) : prev,
-            ""
-          ) +
-          ", " +
-          addr.country
-      );
+      const _formattedAddrs = candiAddrs.map((addr) => concatAddress(addr));
       setFormattedAddrs(_formattedAddrs);
     }
   }, [candiAddrs]);
@@ -49,7 +35,7 @@ const AutoAddDialog = (props: DialogEnhanceProps) => {
   };
 
   const handleAutoChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log(e.target.value);
+    setCandi(parseInt(e.target.value));
   };
 
   return (
@@ -61,8 +47,8 @@ const AutoAddDialog = (props: DialogEnhanceProps) => {
       <Grid container>
         <Grid container display="flex" justifyContent="space-between">
           <Grid item md={8} xs={12}>
-            <BequestInput
-              value={postcode}
+            <AddressInput
+              value={candi || postcode}
               handleChange={handlePostcodeChange}
             />
           </Grid>
@@ -87,16 +73,12 @@ const AutoAddDialog = (props: DialogEnhanceProps) => {
               Select the address from the list
             </Typography>
             <BequestSelect
+              value={candi}
               options={formattedAddrs}
               handleChange={handleAutoChange}
             />
           </Grid>
         )}
-        <BequestSelect
-          options={["asdf", "wqeq"]}
-          value="0"
-          handleChange={handleAutoChange}
-        />
       </Grid>
     </DialogBase>
   );

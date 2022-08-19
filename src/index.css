@@ -28,6 +28,7 @@ body,
 h1,
 h3,
 p,
+div,
 button {
   font-family: Gotham, "DM Sans", sans-serif !important;
   color: "#343A40";
@@ -45,6 +46,17 @@ button {
 
 .MuiMenuItem-root {
   font-size: 1.25rem !important;
+}
+
+.MuiSelect-select {
+  font-size: 1.125rem !important;
+  padding-left: 20px !important;
+}
+
+.MuiInputBase-root .MuiSelect-icon {
+  background: #333;
+  color: #fff;
+  border-radius: 20px;
 }
 
 ::-webkit-scrollbar {

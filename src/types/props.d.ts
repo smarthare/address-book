@@ -31,11 +31,12 @@ export interface BequestButtonProps {
 }
 
 export interface BequestInputProps {
-  value?: string | number;
+  value?: string | number | undefined;
   placeholder?: string;
   required?: boolean;
   gutterTop?: boolean;
   disabled?: boolean;
+  formattedAddress?: Function;
   handleChange?: Function<React.ChangeEvent<HTMLInputElement>>;
 }
 
@@ -43,6 +44,6 @@ export interface BequestSelectProps {
   placeholder?: string;
   options?: Array<string>;
   disabled?: boolean;
-  value?: string;
+  value?: string | number;
   handleChange?: Function<React.ChangeEvent<HTMLSelectElement>>;
 }

@@ -8,7 +8,11 @@ const BequestInput = (props: BequestInputProps) => {
 
   return (
     <>
-      <StyledInput defaultValue={value} onChange={handleChange} {...rest} />
+      <StyledInput
+        defaultValue={value}
+        onChange={handleChange}
+        {...rest}
+      />
       {!value && required && (
         <>
           <Typography fontSize="1.125rem" color="#FF4C50">
