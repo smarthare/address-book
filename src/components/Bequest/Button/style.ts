@@ -2,7 +2,7 @@ import { ButtonBase } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const StyledButton = styled(ButtonBase, {
-  shouldForwardProp: (prop) => prop !== "secondary",
+  shouldForwardProp: (prop) => prop !== "secondary" && prop !== "noWidth",
 })(({ secondary, noWidth }: { secondary?: boolean; noWidth?: boolean }) => ({
   height: "55px",
   ...(!noWidth && { width: "100%" }),

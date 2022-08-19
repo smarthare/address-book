@@ -15,7 +15,7 @@ export const StyledDialog = styled(Dialog)(({ theme }) => ({
   },
 
   "& .MuiDialog-container": {
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.down("lg")]: {
       width: "90%",
     },
     [theme.breakpoints.up("lg")]: {

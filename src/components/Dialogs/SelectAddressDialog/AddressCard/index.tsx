@@ -9,7 +9,7 @@ const AddressCard = (props: AddressCardProps) => {
   const { texts, selected, newCard } = props;
 
   return (
-    <StyledAddressCard item sm={6} md={4} selected={selected}>
+    <StyledAddressCard item xl={4} md={6} sm={12} xs={12} selected={selected}>
       <StyledAddressCardHeader>
         <HomeIcon />
         {!newCard && selected && <CheckIcon />}

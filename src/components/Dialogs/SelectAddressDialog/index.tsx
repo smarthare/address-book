@@ -7,17 +7,15 @@ import { DialogEnhanceProps } from "types/props";
 import { StyledButton } from "./style";
 
 const SelectAddressDialog = (props: DialogEnhanceProps) => {
-  const { open, title, handleClose, handleOpenNext } = props;
+  const { handleOpenNext, ...rest } = props;
 
   return (
     <DialogBase
-      open={open}
-      handleClose={handleClose}
-      title={title}
       handleOkAction={() => {}}
       handleCancelAction={() => {}}
+      {...rest}
     >
-      <Grid container>
+      <Grid container onClick={handleOpenNext}>
         <AddressCard texts={["Add new address"]} selected newCard />
       </Grid>
 

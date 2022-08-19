@@ -26,9 +26,11 @@ const AddressBook = () => {
     setOpenSelect(false);
     setOpenAuto(true);
   };
-  const handleCloseAuto = () => {
-    setOpenAuto(false);
-    setOpenSelect(true);
+  const handleCloseAuto = (event: any, reason?: string) => {
+    if (reason !== 'backdropClick') {
+      setOpenAuto(false);
+      setOpenSelect(true);
+    }
   };
 
   // handling ManualAddAddressDialog
@@ -64,7 +66,7 @@ const AddressBook = () => {
             <BequestInput value="" disabled />
           </Grid>
           <Grid item md={3} xs={12}>
-            <BequestButton handleOnClick={handleOpenSelect}>
+            <BequestButton onClick={handleOpenSelect}>
               Select Address
             </BequestButton>
           </Grid>

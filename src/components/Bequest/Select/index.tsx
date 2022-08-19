@@ -1,36 +1,21 @@
-import { useState } from "react";
-import { Autocomplete, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
+import { MenuItem } from "@mui/material";
 
-import { StyledTextField } from "components/Bequest/Select/style";
+import { BequestSelectProps } from "types/props";
+import { StyledSelect } from "./style";
 
-type Props = {};
-const options = ["option1", "option2"];
-
-const BequestSelect = (props: Props) => {
-  const [value, setValue] = useState<string | null>(options[0]);
-  const [inputValue, setInputValue] = useState("");
+const BequestSelect = (props: BequestSelectProps) => {
+  const { value, handleChange, options, ...rest } = props;
 
   return (
-    <>
-      <Autocomplete
-        value={value}
-        onChange={(event: any, newValue: string | null) => {
-          setValue(newValue);
-        }}
-        inputValue={inputValue}
-        onInputChange={(event, newInputValue) => {
-          setInputValue(newInputValue);
-        }}
-        id="controllable-states-demo"
-        options={options}
-        sx={{ width: "100%" }}
-        renderInput={(params) => <StyledTextField {...params} />}
-      />
-
-      <Typography fontSize="1.125rem" color="#FF4C50">
-        Required
-      </Typography>
-    </>
+    <StyledSelect value={value} label="Age" onChange={handleChange}>
+      {options &&
+        options.map((option, ind) => (
+          <MenuItem key={`select-${option}-ind`} value={ind}>
+            {option}
+          </MenuItem>
+        ))}
+    </StyledSelect>
   );
 };
 

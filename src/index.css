@@ -1,13 +1,13 @@
 @font-face {
   font-family: "Gotham";
-  src: url("./assets/font/GothamSSm.woff2") format('woff2');
+  src: url("./assets/font/GothamSSm.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Gotham";
-  src: url("./assets/font/GothamSSmBold.woff2") format('woff2');
+  src: url("./assets/font/GothamSSmBold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
@@ -24,7 +24,11 @@ body {
   min-height: 100vh;
 }
 
-body, h1, h3, p, button {
+body,
+h1,
+h3,
+p,
+button {
   font-family: Gotham, "DM Sans", sans-serif !important;
   color: "#343A40";
 }
@@ -36,7 +40,11 @@ body, h1, h3, p, button {
 .MuiAutocomplete-popper * {
   font-family: "Gotham";
   font-size: 1.125rem;
-  color: "#343A40"
+  color: "#343A40";
+}
+
+.MuiMenuItem-root {
+  font-size: 1.25rem !important;
 }
 
 ::-webkit-scrollbar {
@@ -44,7 +52,7 @@ body, h1, h3, p, button {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0.1)  ;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 ::-webkit-scrollbar-thumb {

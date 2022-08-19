@@ -16,9 +16,13 @@ const DialogBase = (props: DialogBaseProps) => {
     children,
   } = props;
 
+  const handleClickCloe = () => {
+    handleClose();
+  }
+
   return (
     <StyledDialog
-      onClose={handleClose}
+      onClose={handleClickCloe}
       aria-labelledby="customized-dialog-title"
       open={open}
       maxWidth="xl"
@@ -31,7 +35,7 @@ const DialogBase = (props: DialogBaseProps) => {
           {title}
         </Typography>
 
-        <StyledCloseButton aria-label="close" onClick={handleClose}>
+        <StyledCloseButton aria-label="close" onClick={handleClickCloe}>
           <CloseIcon />
         </StyledCloseButton>
       </StyledDialogTitle>
@@ -39,8 +43,8 @@ const DialogBase = (props: DialogBaseProps) => {
       <DialogContent dividers>{children}</DialogContent>
 
       <DialogActions>
-        <BequestButton handleOnClick={handleCancelAction} noWidth>Cancel</BequestButton>
-        <BequestButton handleOnClick={handleOkAction} secondary noWidth>
+        <BequestButton onClick={handleCancelAction} noWidth>Cancel</BequestButton>
+        <BequestButton onClick={handleOkAction} secondary noWidth>
           OK
         </BequestButton>
       </DialogActions>

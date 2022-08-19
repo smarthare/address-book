@@ -1,8 +1,7 @@
-import { Grid } from "@mui/material";
-
 import DialogBase from "../DialogBase";
-import { BequestInput, BequestSelect } from "components/Bequest";
+import { BequestInput, BequestAutoSelect } from "components/Bequest";
 
+import countries from "constants/countires";
 import { DialogEnhanceProps } from "types/props";
 import { StyledButton } from "./style";
 
@@ -17,31 +16,30 @@ const inputs = [
 ];
 
 const ManualAddDialog = (props: DialogEnhanceProps) => {
-  const { open, title, handleClose, handleOpenNext } = props;
+  const { handleOpenNext, ...rest } = props;
 
   return (
     <DialogBase
-      open={open}
-      handleClose={handleClose}
-      title={title}
       handleOkAction={() => {}}
       handleCancelAction={() => {}}
+      {...rest}
     >
-      <Grid container display="flex" justifyContent="start">
-        <StyledButton onClick={handleOpenNext}>
-          Lookup address by postcode
-        </StyledButton>
-      </Grid>
+      <StyledButton onClick={handleOpenNext}>
+        Lookup address by postcode
+      </StyledButton>
 
-      {inputs.map((input) => (
-        <>
-          {input.type === "input" ? (
-            <BequestInput gutterTop {...input} />
+      {inputs.map((item, ind) => (
+        <div key={`input-${ind}`}>
+          {item.type === "input" ? (
+            <BequestInput gutterTop {...item} />
           ) : (
-            <BequestSelect />
+            <BequestAutoSelect
+              placeholder={item.placeholder}
+              options={countries}
+            />
           )}
           <br />
-        </>
+        </div>
       ))}
     </DialogBase>
   );
