@@ -2,7 +2,7 @@ import DialogBase from "../DialogBase";
 import { BequestInput, BequestAutoSelect } from "components/Bequest";
 
 import countries from "constants/countires";
-import { DialogEnhanceProps } from "types/props";
+import { DialogEnhancedProps } from "types/props";
 import { StyledButton } from "./style";
 
 const inputs = [
@@ -15,7 +15,7 @@ const inputs = [
   { type: "input", placeholder: "Postcode", required: true },
 ];
 
-const ManualAddDialog = (props: DialogEnhanceProps) => {
+const ManualAddDialog = (props: DialogEnhancedProps) => {
   const { handleOpenNext, ...rest } = props;
 
   return (

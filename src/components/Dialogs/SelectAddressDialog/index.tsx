@@ -3,10 +3,10 @@ import { Grid } from "@mui/material";
 import DialogBase from "../DialogBase";
 import AddressCard from "./AddressCard";
 
-import { DialogEnhanceProps } from "types/props";
+import { DialogEnhancedProps } from "types/props";
 import { StyledButton } from "./style";
 
-const SelectAddressDialog = (props: DialogEnhanceProps) => {
+const SelectAddressDialog = (props: DialogEnhancedProps) => {
   const { handleOpenNext, ...rest } = props;
 
   return (

@@ -6,11 +6,11 @@ export interface DialogBaseProps {
   open: boolean;
   handleClose: Function;
   handleOkAction: VoidFunction;
-  handleCancelAction: VoidFunction;
+  handleCancelAction: Function;
   children?: React.ReactNode;
 }
 
-export interface DialogEnhanceProps {
+export interface DialogEnhancedProps {
   open: boolean;
   handleClose: Function;
   handleOpenNext: VoidFunction;
@@ -25,7 +25,7 @@ export interface AddressCardProps {
 
 export interface BequestButtonProps {
   secondary?: boolean;
-  onClick?: VoidFunction;
+  onClick?: Function<MouseEventHandler<HTMLButtonElement> | boolean>;
   noWidth?: boolean;
   children: React.ReactNode;
 }

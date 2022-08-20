@@ -26,11 +26,9 @@ const AddressBook = () => {
     setOpenSelect(false);
     setOpenAuto(true);
   };
-  const handleCloseAuto = (event: any, reason?: string) => {
-    if (reason !== 'backdropClick') {
-      setOpenAuto(false);
-      setOpenSelect(true);
-    }
+  const handleCloseAuto = (flg?: boolean) => {
+    setOpenAuto(false);
+    !flg && setOpenSelect(true);
   };
 
   // handling ManualAddAddressDialog

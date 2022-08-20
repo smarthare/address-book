@@ -41,8 +41,8 @@ function AddressProvider({ children }: { children: ReactNode }) {
       }
     });
 
+    localStorage.setItem("addresses", JSON.stringify([...addrs, _addr]));
     setAddrs((prev) => [...prev, _addr]);
-    localStorage.setItem("addresses", JSON.stringify(addrs));
   };
 
   return (
