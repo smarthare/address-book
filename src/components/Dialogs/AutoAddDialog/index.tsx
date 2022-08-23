@@ -64,7 +64,6 @@ const AutoAddDialog = (props: DialogEnhancedProps) => {
           manualShow: true,
           selectShow: false,
         };
-        console.log("here")
         setError(false);
         setPostcode(fullAddress.postcode);
         break;
