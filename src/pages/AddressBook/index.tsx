@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Grid, Typography } from "@mui/material";
 
 import SelectAddressDialog from "components/Dialogs/SelectAddressDialog";
@@ -6,12 +6,23 @@ import AutoAddDialog from "components/Dialogs/AutoAddDialog";
 import ManualAddDialog from "components/Dialogs/ManualAddDialog";
 import { BequestButton, BequestInput } from "components/Bequest";
 
+import { AddressContext } from "contexts/AddressContext";
 import { AddressInputWrapper, Container } from "./style";
+import concatAddress from "utils/concatAddress";
+import { Address } from "types/address";
 
 const AddressBook = () => {
+  const { currentId, addrs } = useContext(AddressContext);
+
   const [openSelect, setOpenSelect] = useState<boolean>(false);
   const [openAuto, setOpenAuto] = useState<boolean>(false);
   const [openManual, setOpenManual] = useState<boolean>(false);
+  const [currentAddr, setCurrentAddr] = useState<Address>();
+
+  useEffect(() => {
+    const addr = addrs.find((addr) => addr.id === currentId);
+    addr && setCurrentAddr(addr);
+  }, [currentId, addrs]);
 
   // handling SelectAddressDialog
   const handleOpenSelect = () => {
@@ -23,6 +34,7 @@ const AddressBook = () => {
 
   // handling AutoAddAddressDialog
   const handleOpenAuto = () => {
+    setOpenManual(false);
     setOpenSelect(false);
     setOpenAuto(true);
   };
@@ -61,7 +73,7 @@ const AddressBook = () => {
           marginTop="24px"
         >
           <Grid item md={8} xs={12}>
-            <BequestInput value="" disabled />
+            <BequestInput value={concatAddress(currentAddr)} disabled />
           </Grid>
           <Grid item md={3} xs={12}>
             <BequestButton onClick={handleOpenSelect}>
@@ -82,13 +94,12 @@ const AddressBook = () => {
         open={openAuto}
         handleClose={handleCloseAuto}
         handleOpenNext={handleOpenManual}
-        title="Add address"
       />
 
       <ManualAddDialog
         open={openManual}
         handleClose={handleCloseManual}
-        handleOpenNext={handleOpenManual}
+        handleOpenNext={handleOpenAuto}
         title="Add address"
       />
     </Container>

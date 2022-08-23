@@ -5,15 +5,19 @@ export const StyledAddressCard = styled(Grid, {
   shouldForwardProp: (prop) => prop !== "selected",
 })(({ selected }: { selected?: any }) => ({
   cursor: "pointer",
-  ...(selected && {
-    background: "#333",
-    "& *": {
-      color: "#fff",
-    },
-  }),
-  border: "1px solid #D9D9D9",
-  borderRadius: "10px",
-  padding: "16px",
+  padding: "10px",
+
+  "&>div": {
+    ...(selected && {
+      background: "#333",
+      "& *": {
+        color: "#fff",
+      },
+    }),
+    border: "1px solid #D9D9D9",
+    borderRadius: "10px",
+    padding: "16px",
+  },
 }));
 
 export const StyledAddressCardHeader = styled("div")(() => ({

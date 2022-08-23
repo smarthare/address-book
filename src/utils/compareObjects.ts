@@ -8,7 +8,9 @@ const compareObjects = (object1: any, object2: any) => {
 
   for (let key of keys1) {
     if (object1[key] !== object2[key]) {
-      return false;
+      if (!compareObjects(object1[key], object2[key])) {
+        return false;
+      }
     }
   }
 

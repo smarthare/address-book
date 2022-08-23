@@ -2,15 +2,25 @@ import { useEffect, useState } from "react";
 import { Autocomplete, Typography } from "@mui/material";
 
 import { StyledTextField } from "./style";
-import { BequestSelectProps } from "types/props";
+import { BequestAutoSelectProps } from "types/props";
 
-const BequestSelect = (props: BequestSelectProps) => {
-  const { placeholder, options, ...rest } = props;
+const BequestAutoSelect = (props: BequestAutoSelectProps) => {
+  const { placeholder, options, defaultValue, handleChange } = props;
 
-  const [value, setValue] = useState<string | null>(null);
-  const [inputValue, setInputValue] = useState("");
+  const [value, setValue] = useState<string | null>(
+    defaultValue as unknown as string | null
+  );
+  const [inputValue, setInputValue] = useState<string>("");
+  const [require, setRequire] = useState<boolean>(false);
 
-  useEffect(() => {console.log(value)}, [value])
+  useEffect(() => {
+    setRequire(!defaultValue);
+  }, [defaultValue]);
+
+  useEffect(() => {
+    handleChange(value);
+    setRequire(!value);
+  }, [value, handleChange]);
 
   return (
     <>
@@ -27,15 +37,17 @@ const BequestSelect = (props: BequestSelectProps) => {
         options={options || []}
         sx={{ width: "100%" }}
         renderInput={(params) => (
-          <StyledTextField placeholder={placeholder} {...params} {...rest} />
+          <StyledTextField placeholder={placeholder} {...params} />
         )}
       />
 
-      <Typography fontSize="1.125rem" color="#FF4C50">
-        Required
-      </Typography>
+      {require && (
+        <Typography fontSize="1.125rem" color="#FF4C50">
+          Required
+        </Typography>
+      )}
     </>
   );
 };
 
-export default BequestSelect;
+export default BequestAutoSelect;
