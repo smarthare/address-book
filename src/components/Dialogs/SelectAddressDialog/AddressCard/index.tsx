@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 
 import { CheckIcon, HomeIcon } from "components/icons";
 
@@ -27,7 +27,7 @@ const AddressCard = (props: AddressCardProps) => {
       selected={selected}
       onClick={handleClickSetWrapper}
     >
-      <div>
+      <Grid>
         <StyledAddressCardHeader>
           <HomeIcon />
           {!newCard && selected && <CheckIcon />}
@@ -48,8 +48,14 @@ const AddressCard = (props: AddressCardProps) => {
             )
         )}
 
-        {!newCard && <StyledButton onClick={handleClick}>Edit</StyledButton>}
-      </div>
+        <Grid container flexDirection="row-reverse">
+          {!newCard && (
+            <StyledButton onClick={handleClick}>
+              Edit
+            </StyledButton>
+          )}
+        </Grid>
+      </Grid>
     </StyledAddressCard>
   );
 };
