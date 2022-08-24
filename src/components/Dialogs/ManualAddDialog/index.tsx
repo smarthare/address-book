@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 
 import DialogBase from "../DialogBase";
-import { BequestInput, BequestAutoSelect } from "components/Bequest";
+import { BequestInput, BequestAutoSelect } from "components/bequest";
 
 import { AddressContext } from "contexts/AddressContext";
 import countries from "constants/countires";

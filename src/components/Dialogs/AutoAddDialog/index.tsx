@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Grid, CircularProgress, Typography } from "@mui/material";
 
 import DialogBase from "../DialogBase";
-import { BequestButton, BequestInput, BequestSelect } from "components/Bequest";
+import { BequestButton, BequestInput, BequestSelect } from "components/bequest";
 
 import { AddressContext } from "contexts/AddressContext";
 import { DialogEnhancedProps } from "types/props";

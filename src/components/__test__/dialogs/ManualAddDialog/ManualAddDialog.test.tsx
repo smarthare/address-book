@@ -1,7 +1,7 @@
 import { render, screen, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import ManualAddDialog from "../ManualAddDialog";
+import ManualAddDialog from "../../../dialogs/ManualAddDialog";
 
 afterEach(() => {
   cleanup();

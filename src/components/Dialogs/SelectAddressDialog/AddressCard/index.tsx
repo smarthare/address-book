@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Typography } from "@mui/material";
 
-import { CheckIcon, HomeIcon } from "components/Icons";
+import { CheckIcon, HomeIcon } from "components/icons";
 
 import { AddressContext } from "contexts/AddressContext";
 import { AddressCardProps } from "types/props";

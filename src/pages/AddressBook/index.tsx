@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { Grid, Typography } from "@mui/material";
 
-import SelectAddressDialog from "components/Dialogs/SelectAddressDialog";
-import AutoAddDialog from "components/Dialogs/AutoAddDialog";
-import ManualAddDialog from "components/Dialogs/ManualAddDialog";
-import { BequestButton, BequestInput } from "components/Bequest";
+import SelectAddressDialog from "components/dialogs/SelectAddressDialog";
+import AutoAddDialog from "components/dialogs/AutoAddDialog";
+import ManualAddDialog from "components/dialogs/ManualAddDialog";
+import { BequestButton, BequestInput } from "components/bequest";
 
 import { AddressContext } from "contexts/AddressContext";
 import concatAddress from "utils/concatAddress";
@@ -54,8 +54,8 @@ const AddressBook = () => {
   };
 
   return (
-    <Container>
-      <Typography variant="h1" fontSize="2.25rem" fontWeight="bold">
+    <Container data-testid="addressBookPage">
+      <Typography variant="h1" fontSize="2.25rem" fontWeight="bold" data-testid="pageTitle">
         Address Book
       </Typography>
       <Typography fontSize="1.125rem" sx={{ marginBottom: "24px" }}>
@@ -73,10 +73,10 @@ const AddressBook = () => {
           marginTop="24px"
         >
           <Grid item md={8} xs={12}>
-            <BequestInput value={concatAddress(currentAddr)} disabled />
+            <BequestInput value={concatAddress(currentAddr)} disabled data-testid="pageInput" />
           </Grid>
           <Grid item md={3} xs={12}>
-            <BequestButton onClick={handleOpenSelect}>
+            <BequestButton onClick={handleOpenSelect} data-testid="pageBtn">
               Select Address
             </BequestButton>
           </Grid>

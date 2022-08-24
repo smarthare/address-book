@@ -1,7 +1,7 @@
 import { render, screen, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import DialogBase from "../DialogBase";
+import DialogBase from "../../../dialogs/DialogBase";
 
 afterEach(() => {
   cleanup();

@@ -1,7 +1,7 @@
 import { DialogContent, DialogActions, Typography } from "@mui/material";
 
-import BequestButton from "components/Bequest/Button";
-import { HomeIcon, CloseIcon } from "components/Icons";
+import BequestButton from "components/bequest/Button";
+import { HomeIcon, CloseIcon } from "components/icons";
 
 import { DialogBaseProps } from "types/props";
 import { StyledCloseButton, StyledDialog, StyledDialogTitle } from "./style";
