@@ -26,11 +26,11 @@ const BequestAutoSelect = (props: BequestAutoSelectProps) => {
     <>
       <Autocomplete
         value={value}
-        onChange={(event: any, newValue: string | null) => {
+        onChange={(e: any, newValue: string | null) => {
           newValue && setValue(newValue);
         }}
         inputValue={inputValue}
-        onInputChange={(event, newInputValue) => {
+        onInputChange={(e, newInputValue) => {
           setInputValue(newInputValue);
         }}
         id="controllable-states-demo"

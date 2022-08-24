@@ -7,9 +7,9 @@ import ManualAddDialog from "components/Dialogs/ManualAddDialog";
 import { BequestButton, BequestInput } from "components/Bequest";
 
 import { AddressContext } from "contexts/AddressContext";
-import { AddressInputWrapper, Container } from "./style";
 import concatAddress from "utils/concatAddress";
 import { Address } from "types/address";
+import { AddressInputWrapper, Container } from "./style";
 
 const AddressBook = () => {
   const { currentId, addrs } = useContext(AddressContext);

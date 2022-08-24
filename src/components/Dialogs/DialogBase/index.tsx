@@ -31,7 +31,7 @@ const DialogBase = (props: DialogBaseProps) => {
       <StyledDialogTitle id="customized-dialog-title">
         <HomeIcon />
 
-        <Typography fontSize="1.5rem" fontWeight="bold">
+        <Typography fontSize="1.5rem" fontWeight="bold" data-testid="dialogTitle">
           {title}
         </Typography>
 
@@ -40,7 +40,7 @@ const DialogBase = (props: DialogBaseProps) => {
         </StyledCloseButton>
       </StyledDialogTitle>
 
-      <DialogContent dividers>{children}</DialogContent>
+      <DialogContent dividers data-testid="dialogContent">{children}</DialogContent>
 
       <DialogActions>
         <BequestButton onClick={handleCancelAction} noWidth>Cancel</BequestButton>

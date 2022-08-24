@@ -1,6 +1,7 @@
-import { AddressProvider } from "contexts/AddressContext";
 import Sidebar from "./components/Sidebar";
 import AddressBook from "./pages/AddressBook";
+
+import { AddressProvider } from "contexts/AddressContext";
 
 function App() {
   return (

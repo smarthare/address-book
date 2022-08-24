@@ -136,6 +136,7 @@ const AutoAddDialog = (props: DialogEnhancedProps) => {
       handleCancelAction={handleClose}
       handleClose={handleClose}
       title={data.title}
+      data-testid="AutoAddDialog"
       {...rest}
     >
       <Grid container>
@@ -145,6 +146,7 @@ const AutoAddDialog = (props: DialogEnhancedProps) => {
               value={data.inputValue}
               key={data.inputValue}
               handleChange={handlePostcodeChange}
+              data-testid="dialogInput"
             />
           </Grid>
           <Grid item md={3} xs={12}>
@@ -157,6 +159,7 @@ const AutoAddDialog = (props: DialogEnhancedProps) => {
                     ? handleUnsetClick
                     : handleFindClick
                 }
+                data-testid="dialogActBtn"
               >
                 {data.title}
               </BequestButton>
@@ -170,13 +173,14 @@ const AutoAddDialog = (props: DialogEnhancedProps) => {
             color="red"
             width="100%"
             marginTop="16px"
+            data-testid="dialogErrorMsg"
           >
             We couldn't get the address.
           </Typography>
         )}
 
         {data.manualShow && (
-          <StyledButton onClick={handleOpenNext}>
+          <StyledButton onClick={handleOpenNext} data-testid="dialogManualBtn">
             Enter address manually
           </StyledButton>
         )}

@@ -71,7 +71,7 @@ const ManualAddDialog = (props: DialogEnhancedProps) => {
       handleClose={handleClose}
       {...rest}
     >
-      <StyledButton onClick={handleOpenNext}>
+      <StyledButton onClick={handleOpenNext} data-testid="dialogAutoBtn">
         Lookup address by postcode
       </StyledButton>
 

@@ -32,7 +32,7 @@ const SelectAddressDialog = (props: DialogEnhancedProps) => {
       handleCancelAction={() => {}}
       {...rest}
     >
-      <Grid container>
+      <Grid container data-testid="dialogCardWrapper">
         {addrs.length > 0 ? (
           addrs.map((addr) => (
             <AddressCard
@@ -54,7 +54,7 @@ const SelectAddressDialog = (props: DialogEnhancedProps) => {
       </Grid>
 
       <Grid container display="flex" justifyContent="end">
-        <StyledButton onClick={handleAddAddress}>Add new address</StyledButton>
+        <StyledButton onClick={handleAddAddress} data-testid="dialogAddBtn">Add new address</StyledButton>
       </Grid>
     </DialogBase>
   );

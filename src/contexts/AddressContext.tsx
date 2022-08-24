@@ -24,7 +24,7 @@ const AddressContext = createContext({
   getFullAddress: () => {},
 } as IAddressContext);
 
-function AddressProvider({ children }: { children: ReactNode }) {
+const AddressProvider = ({ children }: { children: ReactNode }) => {
   const [loading, setLoading] = useState<boolean>();
   const [addrs, setAddrs] = useState<Array<Address>>([]);
   const [candiAddrs, setCandiAddrs] = useState<Array<Address>>([]);
@@ -109,6 +109,6 @@ function AddressProvider({ children }: { children: ReactNode }) {
       {children}
     </AddressContext.Provider>
   );
-}
+};
 
 export { AddressProvider, AddressContext };
