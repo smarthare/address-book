@@ -22,8 +22,8 @@ const BequestInput = (props: BequestInputProps) => {
   return (
     <>
       <StyledInput
-        defaultValue={value}
-        key={value}
+        defaultValue={value || ""}
+        key={value || ""}
         onChange={handleOnChange}
         {...rest}
       />

@@ -143,6 +143,7 @@ const AutoAddDialog = (props: DialogEnhancedProps) => {
           <Grid item md={8} xs={12}>
             <BequestInput
               value={data.inputValue}
+              key={data.inputValue}
               handleChange={handlePostcodeChange}
             />
           </Grid>

@@ -7,7 +7,7 @@ const BequestSelect = (props: BequestSelectProps) => {
   const { defaultValue, handleChange, options } = props;
 
   return (
-    <StyledSelect value={defaultValue} label="Age" onChange={handleChange}>
+    <StyledSelect value={defaultValue || ""} label="Age" onChange={handleChange}>
       {options &&
         options.map((option, ind) => (
           <MenuItem key={`select-${option}-ind`} value={ind + 1}>
