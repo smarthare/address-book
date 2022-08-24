@@ -1,15 +1,15 @@
 import { render, screen, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import SelectAddressDialog from "../../../dialogs/SelectAddressDialog";
+import AutoAddDialog from "../../AutoAddDialog";
 
 afterEach(() => {
   cleanup();
 });
 
-test("Should render SelectAddressDialog component", () => {
+test("Should render AutoAddDialog component", () => {
   render(
-    <SelectAddressDialog
+    <AutoAddDialog
       open={true}
       handleClose={() => {}}
       handleOpenNext={() => {}}
@@ -20,15 +20,16 @@ test("Should render SelectAddressDialog component", () => {
 
   expect(dialogElement).toBeInTheDocument();
   expect(dialogElement).toHaveClass("MuiPaper-root");
-  expect(screen.getByTestId("dialogAddBtn")).toHaveTextContent(
-    "Add new address"
+  expect(screen.getByTestId("dialogManualBtn")).toHaveTextContent(
+    "Enter address manually"
   );
-  expect(screen.getByTestId("dialogCardWrapper").childElementCount).toEqual(1);
+  expect(screen.getByTestId("dialogActBtn")).toHaveTextContent("Add address");
+  expect(screen.getByTestId("dialogInput")).toHaveValue("");
 });
 
-test("SelectAddressDialog matches snapshot", () => {
+test("AutoAddDialog matches snapshot", () => {
   const component = render(
-    <SelectAddressDialog
+    <AutoAddDialog
       open={true}
       handleClose={() => {}}
       handleOpenNext={() => {}}

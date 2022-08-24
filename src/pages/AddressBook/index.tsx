@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { Grid, Typography } from "@mui/material";
 
-import SelectAddressDialog from "components/dialogs/SelectAddressDialog";
-import AutoAddDialog from "components/dialogs/AutoAddDialog";
-import ManualAddDialog from "components/dialogs/ManualAddDialog";
+import {
+  AutoAddDialog,
+  ManualAddDialog,
+  SelectAddressDialog,
+} from "components/dialogs";
 import { BequestButton, BequestInput } from "components/bequest";
 
 import { AddressContext } from "contexts/AddressContext";
@@ -55,7 +57,12 @@ const AddressBook = () => {
 
   return (
     <Container data-testid="addressBookPage">
-      <Typography variant="h1" fontSize="2.25rem" fontWeight="bold" data-testid="pageTitle">
+      <Typography
+        variant="h1"
+        fontSize="2.25rem"
+        fontWeight="bold"
+        data-testid="pageTitle"
+      >
         Address Book
       </Typography>
       <Typography fontSize="1.125rem" sx={{ marginBottom: "24px" }}>
@@ -73,7 +80,11 @@ const AddressBook = () => {
           marginTop="24px"
         >
           <Grid item md={8} xs={12}>
-            <BequestInput value={concatAddress(currentAddr)} disabled data-testid="pageInput" />
+            <BequestInput
+              value={concatAddress(currentAddr)}
+              disabled
+              data-testid="pageInput"
+            />
           </Grid>
           <Grid item md={3} xs={12}>
             <BequestButton onClick={handleOpenSelect} data-testid="pageBtn">

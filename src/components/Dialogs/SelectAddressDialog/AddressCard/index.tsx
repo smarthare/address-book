@@ -19,13 +19,14 @@ const AddressCard = (props: AddressCardProps) => {
 
   return (
     <StyledAddressCard
+      item
       xs={12}
       sm={12}
       md={6}
       lg={4}
-      item
       selected={selected}
       onClick={handleClickSetWrapper}
+      data-testid="cardAddress"
     >
       <Grid>
         <StyledAddressCardHeader>
@@ -35,7 +36,7 @@ const AddressCard = (props: AddressCardProps) => {
 
         {texts.map(
           (text, ind) =>
-            ind !== 2 && (
+            ind !== 1 && (
               <Typography
                 variant="h3"
                 fontSize="1.5rem"
@@ -49,11 +50,7 @@ const AddressCard = (props: AddressCardProps) => {
         )}
 
         <Grid container flexDirection="row-reverse">
-          {!newCard && (
-            <StyledButton onClick={handleClick}>
-              Edit
-            </StyledButton>
-          )}
+          {!newCard && <StyledButton onClick={handleClick} data-testid="cardBtn">Edit</StyledButton>}
         </Grid>
       </Grid>
     </StyledAddressCard>
