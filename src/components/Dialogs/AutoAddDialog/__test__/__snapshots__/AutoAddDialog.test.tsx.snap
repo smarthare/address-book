@@ -142,6 +142,7 @@ Object {
             </button>
             <button
               class="MuiButtonBase-root css-1f1k8ev-MuiButtonBase-root"
+              data-testid="dialogOkBtn"
               tabindex="0"
               type="button"
             >

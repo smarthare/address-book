@@ -95,14 +95,8 @@ Object {
             <input
               class="css-1m9nqg5"
               placeholder="Line 1"
-              value=""
+              value="line1"
             />
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-lpk256-MuiTypography-root"
-            >
-              Required
-            </p>
-            <br />
             <br />
             <input
               class="css-1m9nqg5"
@@ -119,14 +113,8 @@ Object {
             <input
               class="css-1m9nqg5"
               placeholder="Town"
-              value=""
+              value="London"
             />
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-lpk256-MuiTypography-root"
-            >
-              Required
-            </p>
-            <br />
             <br />
             <input
               class="css-1m9nqg5"
@@ -200,23 +188,12 @@ Object {
                 </div>
               </div>
             </div>
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-lpk256-MuiTypography-root"
-            >
-              Required
-            </p>
             <br />
             <input
               class="css-1m9nqg5"
               placeholder="Postcode"
-              value=""
+              value="postcode"
             />
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-lpk256-MuiTypography-root"
-            >
-              Required
-            </p>
-            <br />
             <br />
           </div>
           <div
@@ -234,6 +211,7 @@ Object {
             </button>
             <button
               class="MuiButtonBase-root css-1f1k8ev-MuiButtonBase-root"
+              data-testid="dialogOkBtn"
               tabindex="0"
               type="button"
             >

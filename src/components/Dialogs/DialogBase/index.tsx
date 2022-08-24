@@ -44,7 +44,7 @@ const DialogBase = (props: DialogBaseProps) => {
 
       <DialogActions>
         <BequestButton onClick={handleCancelAction} noWidth>Cancel</BequestButton>
-        <BequestButton onClick={handleOkAction} secondary noWidth>
+        <BequestButton onClick={handleOkAction} data-testid="dialogOkBtn" secondary noWidth>
           OK
         </BequestButton>
       </DialogActions>

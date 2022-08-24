@@ -78,7 +78,7 @@ const ManualAddDialog = (props: DialogEnhancedProps) => {
       <BequestInput
         placeholder="Line 1"
         key="line_1"
-        value={addr && addr.line_1}
+        value={line1}
         handleChange={setLine1}
         gutterTop
         required
@@ -88,7 +88,7 @@ const ManualAddDialog = (props: DialogEnhancedProps) => {
       <BequestInput
         placeholder="Line 2"
         key="line_2"
-        value={addr && addr.line_2}
+        value={line2}
         handleChange={setLine2}
         gutterTop
       />
@@ -96,7 +96,7 @@ const ManualAddDialog = (props: DialogEnhancedProps) => {
 
       <BequestInput
         placeholder="Line 3"
-        value={addr && addr.line_3}
+        value={line3}
         handleChange={setLine3}
         gutterTop
       />
@@ -104,7 +104,7 @@ const ManualAddDialog = (props: DialogEnhancedProps) => {
 
       <BequestInput
         placeholder="Town"
-        value={addr && addr.town_or_city}
+        value={town}
         handleChange={setTown}
         required
         gutterTop
@@ -113,7 +113,7 @@ const ManualAddDialog = (props: DialogEnhancedProps) => {
 
       <BequestInput
         placeholder="County"
-        value={addr && addr.county}
+        value={county}
         handleChange={setCounty}
         gutterTop
       />
@@ -122,14 +122,14 @@ const ManualAddDialog = (props: DialogEnhancedProps) => {
       <BequestAutoSelect
         placeholder="Select Country"
         options={countries}
-        defaultValue={addr ? addr.country : null}
+        defaultValue={country || null}
         handleChange={setCountry}
       />
       <br />
 
       <BequestInput
         placeholder="Postcode"
-        value={addr && addr.postcode}
+        value={postcode}
         handleChange={setPostcode}
         gutterTop
         required
